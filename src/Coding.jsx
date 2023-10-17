@@ -12,7 +12,8 @@ export default function Coding(props) {
 
     if (props.rounds === 4) {
       props.setAge(timePasses(props.age));
-      props.setRounds(0); // Reset the rounds counter
+      props.setEnergy(props.energy - 3);
+      props.setRounds(0);
     }
   }
   return (

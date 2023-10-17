@@ -39,8 +39,10 @@ function App() {
           setRounds={setRounds}
         />
         <Coffee
+          energy={energy}
           setEnergy={setEnergy}
           alive={alive}
+          setAlive={setAlive}
           age={age}
           setAge={setAge}
           rounds= {rounds}

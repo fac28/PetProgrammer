@@ -6,9 +6,8 @@ export default function Sleep (props) {
 
   function update() {
     props.alive && props.setEnergy((energy) => energy + 31);
-    props.setAge(timePasses(props.age))
-    // reset rounds to 0
-    props.setRounds(0)
+    props.alive && props.setAge(timePasses(props.age))
+    props.alive && props.setRounds(0)
   }
 
   return (
