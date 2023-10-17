@@ -6,6 +6,7 @@ import Coding from "./Coding.jsx";
 import Coffee from "./Coffee.jsx";
 import Stats from "./Stats";
 import CreateName from "./CreateName";
+import timePasses from "./utils/timePasses";
 
 function App() {
   const [energy, setEnergy] = useState(50);
@@ -16,10 +17,8 @@ function App() {
   const [age, setAge] = useState(16);
   const [rounds, setRounds] = useState(0);
 
-  return (
-    <>
-      <div></div>
-      <h1>Pet Programmer</h1>
+  function displayActions() {
+    return (
       <div className="card">
         <Sleep
           energy={energy}
@@ -29,6 +28,7 @@ function App() {
           alive={alive}
           rounds={rounds}
           setRounds={setRounds}
+          timePasses={timePasses}
         />
         <Coding
           energy={energy}
@@ -41,6 +41,7 @@ function App() {
           setAge={setAge}
           rounds={rounds}
           setRounds={setRounds}
+          timePasses={timePasses}
         />
         <Coffee
           energy={energy}
@@ -51,9 +52,17 @@ function App() {
           setAge={setAge}
           rounds={rounds}
           setRounds={setRounds}
+          timePasses={timePasses}
         />
       </div>
+    );
+  }
 
+  return (
+    <>
+      <div></div>
+      <h1>Pet Programmer</h1>
+      {coderName != "" && displayActions()}
       {coderName != "" ? (
         <Stats
           energy={energy}
@@ -69,5 +78,4 @@ function App() {
     </>
   );
 }
-
 export default App;
