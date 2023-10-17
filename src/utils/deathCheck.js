@@ -1,6 +1,7 @@
-export default function isDead(age) {
-  if (age + 1 > 49) {
-    setAlive(false);
+export default function isOld(props) {
+  if (props.age + 1 > 49) {
+    props.setAlive(false);
+    props.setDeathCause("being too old");
     return;
   }
 }
