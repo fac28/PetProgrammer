@@ -9,13 +9,14 @@ function App() {
   const [energy, setEnergy] = useState(50);
   const [codingSkill, setCodingSkill] = useState(0);
   const [alive, setAlive] = useState(true);
+  const [age, setAge] = useState(16);
 
   return (
     <>
       <div></div>
       <h1>Pet Programmer</h1>
       <div className="card">
-        <Sleep setEnergy={setEnergy} />
+        <Sleep energy={energy} setEnergy={setEnergy} age={age} setAge={setAge}  />
         <Coding
           energy={energy}
           setEnergy={setEnergy}
@@ -29,6 +30,7 @@ function App() {
       <div className="stats">
         <p>energy level is {energy}</p>
         <p>coding level is {codingSkill}</p>
+        <p>age is {age}</p>
       </div>
     </>
   );
