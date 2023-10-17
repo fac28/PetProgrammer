@@ -1,12 +1,7 @@
-export default function Sleep (props) {
-
+export default function Sleep(props) {
   function updateEnergy() {
-    props.setEnergy((energy) => energy + 31)
+    props.alive && props.setEnergy((energy) => energy + 31);
   }
 
-  return (
-    <button onClick={updateEnergy}>
-      Sleep
-    </button>
-  )
+  return <button onClick={updateEnergy}>Sleep</button>;
 }
