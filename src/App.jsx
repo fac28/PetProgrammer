@@ -4,13 +4,18 @@ import "./App.css";
 import Sleep from "./Sleep.jsx";
 import Coding from "./Coding.jsx";
 import Coffee from "./Coffee.jsx";
+import Stats from "./Stats";
+import CreateName from "./CreateName";
 
 function App() {
   const [energy, setEnergy] = useState(50);
   const [codingSkill, setCodingSkill] = useState(0);
   const [alive, setAlive] = useState(true);
+
+  const [coderName, setCoderName] = useState("");
   const [age, setAge] = useState(16);
   const [rounds, setRounds] = useState(0);
+
 
   return (
     <>
@@ -49,12 +54,18 @@ function App() {
           setRounds={setRounds}
         />
       </div>
-      <div className="stats">
-        <p>{alive ? `energy level is ${energy}` : `Your programmer is`}</p>
-        <p>{alive ? `coding level is ${codingSkill}` : `DEAD!`}</p>
-        <p>{alive? `age is ${age}`:`aged ${age}`}</p>
-        <p>rounds: {rounds}</p>
-      </div>
+
+      {coderName != "" ? (
+        <Stats
+          energy={energy}
+          alive={alive}
+          codingSkill={codingSkill}
+          coderName={coderName}
+        />
+      ) : (
+        <CreateName setCoderName={setCoderName} coderName={coderName} />
+      )}
+
     </>
   );
 }
