@@ -30,7 +30,7 @@ function App() {
       <div className="stats">
         <p>{alive ? `energy level is ${energy}` : `Your programmer is`}</p>
         <p>{alive ? `coding level is ${codingSkill}` : `DEAD!`}</p>
-        <p>{alive? `age is {age}`:`aged {age}`}</p>
+        <p>{alive? `age is ${age}`:`aged ${age}`}</p>
       </div>
     </>
   );
