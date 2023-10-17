@@ -5,7 +5,7 @@ export default function Sleep (props) {
   }
 
   function updateEnergy() {
-    props.setEnergy(props.energy + 31)
+    props.alive && props.setEnergy((energy) => energy + 31);
     props.setAge(timePasses(props.age))
   }
 

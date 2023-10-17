@@ -16,7 +16,7 @@ function App() {
       <div></div>
       <h1>Pet Programmer</h1>
       <div className="card">
-        <Sleep energy={energy} setEnergy={setEnergy} age={age} setAge={setAge}  />
+        <Sleep energy={energy} setEnergy={setEnergy} age={age} setAge={setAge} alive={alive} />
         <Coding
           energy={energy}
           setEnergy={setEnergy}
@@ -25,12 +25,12 @@ function App() {
           setAlive={setAlive}
           alive={alive}
         />
-        <Coffee setEnergy={setEnergy} />
+        <Coffee setEnergy={setEnergy} alive={alive} />
       </div>
       <div className="stats">
-        <p>energy level is {energy}</p>
-        <p>coding level is {codingSkill}</p>
-        <p>age is {age}</p>
+        <p>{alive ? `energy level is ${energy}` : `Your programmer is`}</p>
+        <p>{alive ? `coding level is ${codingSkill}` : `DEAD!`}</p>
+        <p>{alive? `age is {age}`:`aged {age}`}</p>
       </div>
     </>
   );

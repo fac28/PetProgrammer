@@ -1,11 +1,13 @@
 export default function Coding(props) {
-  console.log(props.alive);
+  function UpdateStats() {
+    props.setCodingSkill(props.codingSkill + 1);
+    props.setEnergy(props.energy - 20);
+    props.energy - 20 < 0 && props.setAlive(false);
+  }
   return (
     <button
       onClick={() => {
-        props.setCodingSkill(props.codingSkill + 1);
-        props.setEnergy(props.energy - 20);
-        props.energy - 20 < 0 && props.setAlive(false);
+        props.alive && UpdateStats();
       }}
     >
       Code
