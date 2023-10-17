@@ -11,14 +11,26 @@ function App() {
   const [energy, setEnergy] = useState(50);
   const [codingSkill, setCodingSkill] = useState(0);
   const [alive, setAlive] = useState(true);
+
   const [coderName, setCoderName] = useState("");
+  const [age, setAge] = useState(16);
+  const [rounds, setRounds] = useState(0);
+
 
   return (
     <>
       <div></div>
       <h1>Pet Programmer</h1>
       <div className="card">
-        <Sleep setEnergy={setEnergy} alive={alive} />
+        <Sleep
+          energy={energy}
+          setEnergy={setEnergy}
+          age={age}
+          setAge={setAge}
+          alive={alive}
+          rounds= {rounds}
+          setRounds={setRounds}
+        />
         <Coding
           energy={energy}
           setEnergy={setEnergy}
@@ -26,9 +38,23 @@ function App() {
           setCodingSkill={setCodingSkill}
           setAlive={setAlive}
           alive={alive}
+          age={age}
+          setAge={setAge}
+          rounds= {rounds}
+          setRounds={setRounds}
         />
-        <Coffee setEnergy={setEnergy} alive={alive} />
+        <Coffee
+          energy={energy}
+          setEnergy={setEnergy}
+          alive={alive}
+          setAlive={setAlive}
+          age={age}
+          setAge={setAge}
+          rounds= {rounds}
+          setRounds={setRounds}
+        />
       </div>
+
       {coderName != "" ? (
         <Stats
           energy={energy}
@@ -39,6 +65,7 @@ function App() {
       ) : (
         <CreateName setCoderName={setCoderName} coderName={coderName} />
       )}
+
     </>
   );
 }

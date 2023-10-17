@@ -1,7 +1,18 @@
-export default function Sleep(props) {
-  function updateEnergy() {
-    props.alive && props.setEnergy((energy) => energy + 31);
+export default function Sleep (props) {
+
+  function timePasses(age) {
+    return age + 0.5;
   }
 
-  return <button onClick={updateEnergy}>Sleep</button>;
+  function update() {
+    props.alive && props.setEnergy((energy) => energy + 31);
+    props.alive && props.setAge(timePasses(props.age))
+    props.alive && props.setRounds(0)
+  }
+
+  return (
+    <button onClick={update} >
+      Sleep
+    </button>
+  )
 }
