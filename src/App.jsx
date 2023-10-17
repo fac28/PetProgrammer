@@ -16,7 +16,6 @@ function App() {
   const [age, setAge] = useState(16);
   const [rounds, setRounds] = useState(0);
 
-
   return (
     <>
       <div></div>
@@ -28,7 +27,7 @@ function App() {
           age={age}
           setAge={setAge}
           alive={alive}
-          rounds= {rounds}
+          rounds={rounds}
           setRounds={setRounds}
         />
         <Coding
@@ -40,7 +39,7 @@ function App() {
           alive={alive}
           age={age}
           setAge={setAge}
-          rounds= {rounds}
+          rounds={rounds}
           setRounds={setRounds}
         />
         <Coffee
@@ -50,7 +49,7 @@ function App() {
           setAlive={setAlive}
           age={age}
           setAge={setAge}
-          rounds= {rounds}
+          rounds={rounds}
           setRounds={setRounds}
         />
       </div>
@@ -61,11 +60,12 @@ function App() {
           alive={alive}
           codingSkill={codingSkill}
           coderName={coderName}
+          age={age}
+          rounds={rounds}
         />
       ) : (
         <CreateName setCoderName={setCoderName} coderName={coderName} />
       )}
-
     </>
   );
 }

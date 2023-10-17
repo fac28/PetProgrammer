@@ -6,6 +6,8 @@ export default function Stats(props) {
         {props.alive ? `energy level is ${props.energy}` : `Your programmer is`}
       </p>
       <p>{props.alive ? `coding level is ${props.codingSkill}` : `DEAD!`}</p>
+
+      <p>{props.alive ? `age is ${props.age}` : `aged ${props.age}`}</p>
     </div>
   );
 }
