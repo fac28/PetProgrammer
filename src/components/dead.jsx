@@ -1,7 +1,7 @@
 import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
 
-export const Dead = ({state}) => {
+export default function Dead ({state}) {
   const { width, height } = useWindowSize()
 
   if(!state.alive){
@@ -12,5 +12,3 @@ export const Dead = ({state}) => {
       />
   )}
 }
-
-Dead.displayName = 'Dead'
