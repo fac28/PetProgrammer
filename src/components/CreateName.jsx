@@ -1,8 +1,7 @@
-export default function CreateName(props) {
-  console.log("code name" + props.coderName);
+export default function CreateName({ dispatch }) {
   function updateName(event) {
     event.preventDefault();
-    props.setCoderName(event.target.petName.value);
+    dispatch({ type: "update", payload: { coderName: event.target.petName.value } });
   }
   return (
     <form onSubmit={updateName}>
