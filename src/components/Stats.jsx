@@ -1,5 +1,6 @@
 export default function Stats(props) {
   const RenderedSkills = (props) => {
+    // eslint-disable-next-line react/jsx-key
     return props.skills.map((skill) => <li>{skill}</li>);
   };
   return (

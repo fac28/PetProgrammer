@@ -1,7 +1,5 @@
-export default function isOld(props) {
-  if (props.age + 1 > 49) {
-    props.setAlive(false);
-    props.setDeathCause("being too old");
-    return;
+export default function isOld(dispatch, state) {
+  if (state.age + 1 > 49) {
+    dispatch({ type: "update", payload: { alive: false, deathCause: "being too old" } });
   }
 }

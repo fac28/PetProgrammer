@@ -1,5 +1,7 @@
-export default function aged(props) {
-  props.setAge(props.timePasses(props));
-  props.setEnergy(props.energy - 3);
-  props.setRounds(0);
+import timePasses from "./timePasses";
+
+export default function aged(dispatch, state) {
+  dispatch({ type: "update", payload: { age: timePasses() } });
+  dispatch({ type: "update", payload: { energy: state.energy - 3 } });
+  dispatch({ type: "update", payload: { rounds: 0 } });
 }
