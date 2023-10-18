@@ -1,4 +1,4 @@
-import aged from "../utils/aged.js";
+import passedOut from "../utils/passedOut.js";
 import isExhausted from "../utils/exhausted.js";
 
 export default function Coding({state, dispatch}) {
@@ -9,9 +9,11 @@ export default function Coding({state, dispatch}) {
       }
 
       // Dispatch actions to update the state
-      dispatch({ type: "update", payload: { codingSkill: state.codingSkill + 1 } });
-      dispatch({ type: "update", payload: { energy: state.energy - 20 } });
-      dispatch({ type: "update", payload: { rounds: state.rounds + 1 } });
+      dispatch({ type: "update", payload: {
+        codingSkill: state.codingSkill + 1,
+        energy: state.energy - 20,
+        rounds: state.rounds + 1
+       } });
 
       state.codingSkill + 1 > 0 &&
       dispatch({ type: "update", payload: { unlockedSkills: [...state.unlockedSkills, "Javascript"] }});
@@ -21,7 +23,7 @@ export default function Coding({state, dispatch}) {
       }
 
       if (state.rounds === 4) {
-        aged(state, dispatch);
+        passedOut( dispatch, state);
       }
 
       if (state.alive) {
