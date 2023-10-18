@@ -1,4 +1,4 @@
-import aged from "../utils/aged.js";
+import passedOut from "../utils/passedOut.js";
 import isMad from "../utils/coffeeDeath.js";
 
 export default function Coffee({ state, dispatch }) {
@@ -8,15 +8,18 @@ export default function Coffee({ state, dispatch }) {
     }
 
     isMad(dispatch, state);
-    dispatch({ type: "update", payload: { energy: state.energy + 1 } });
-    dispatch({ type: "update", payload: { coffee: state.coffee + 1 } });
-    dispatch({ type: "update", payload: { rounds: state.rounds + 1 } });
+    dispatch({ type: "update", payload: {
+      energy: state.energy + 1,
+      coffee: state.coffee + 1,
+      rounds: state.rounds + 1}
+    });
+
     if (state.energy - 1 < 0) {
       dispatch({ type: "update", payload: { alive: false } });
     }
 
     if (state.rounds === 4) {
-      aged(dispatch, state);
+      passedOut(dispatch, state);
     }
 
     if (state.alive) {
