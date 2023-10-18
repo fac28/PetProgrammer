@@ -8,7 +8,7 @@ Please note, coffee is not a substitute to sleep.
 
 ### Cloning the Repository
 
-To get started with TechYEScracy, you'll need to clone this GitHub repository to your local machine. Open your terminal and run the following command:
+To get started with PetProgrammer, you'll need to clone this GitHub repository to your local machine. Open your terminal and run the following command:
 
 ```bash
 git clone https://github.com/fac28/PetProgrammer.git
@@ -30,4 +30,7 @@ You can start a local development server by running the following command:
 ```bash
 npm run dev
 ```
+
+## Deployment
+Our game is deployed here: <https://pet-programmer.netlify.app/>
 
