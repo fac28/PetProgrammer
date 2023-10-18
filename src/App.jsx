@@ -8,6 +8,7 @@ import Stats from "./components/Stats";
 import CreateName from "./components/CreateName";
 import {imagePaths, initialState} from "./utils/constants";
 import {Dead} from "./components/dead"
+import Apply from "./components/Apply";
 
 
 function reducer(state, action) {
@@ -36,6 +37,7 @@ function App() {
         <Sleep {...actionProps} />
         <Coding {...actionProps} />
         <Coffee {...actionProps} />
+        <Apply {...actionProps} />
         <Dead {...actionProps}/>
         </div>
         <div className="image">
