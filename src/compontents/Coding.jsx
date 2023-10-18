@@ -11,6 +11,8 @@ export default function Coding(props) {
 
     props.rounds === 4 && aged(props);
     props.alive && props.setImage("coding");
+    props.codingSkill + 1 > 0 &&
+      props.setUnlockedSkills([...props.unlockedSkills, "Javascript"]);
   }
   return (
     <button

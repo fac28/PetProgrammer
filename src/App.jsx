@@ -18,6 +18,7 @@ function App() {
   const [coffee, setCoffee] = useState(0);
   const [deathCause, setDeathCause] = useState("");
   const [image, setImage] = useState("");
+  const [unlockedSkills, setUnlockedSkills] = useState(["breathing"]);
 
   const imagePaths = {
     coffee:
@@ -48,6 +49,8 @@ function App() {
     setCodingSkill,
     image,
     setImage,
+    unlockedSkills,
+    setUnlockedSkills,
   };
 
   function displayActions() {
@@ -81,6 +84,7 @@ function App() {
           age={age}
           rounds={rounds}
           deathCause={deathCause}
+          unlockedSkills={unlockedSkills}
         />
       ) : (
         <CreateName setCoderName={setCoderName} coderName={coderName} />

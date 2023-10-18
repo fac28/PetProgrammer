@@ -1,4 +1,8 @@
 export default function Stats(props) {
+  const RenderedSkills = (skills) => {
+    console.log(skills);
+    return skills.skills.map((skill) => <li>{skill}</li>);
+  };
   return (
     <div className="stats">
       <p>
@@ -13,6 +17,11 @@ export default function Stats(props) {
       </p>
 
       <p>{props.alive ? `age is ${props.age}` : `aged ${props.age}`}</p>
+
+      <p>Skills:</p>
+      <ul>
+        <RenderedSkills skills={props.unlockedSkills} />
+      </ul>
     </div>
   );
 }
