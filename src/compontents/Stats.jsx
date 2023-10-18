@@ -1,7 +1,6 @@
 export default function Stats(props) {
-  const RenderedSkills = (skills) => {
-    console.log(skills);
-    return skills.skills.map((skill) => <li>{skill}</li>);
+  const RenderedSkills = (props) => {
+    return props.skills.map((skill) => <li>{skill}</li>);
   };
   return (
     <div className="stats">
