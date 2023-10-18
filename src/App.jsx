@@ -7,6 +7,8 @@ import Coffee from "./components/Coffee.jsx";
 import Stats from "./components/Stats";
 import CreateName from "./components/CreateName";
 import {imagePaths, initialState} from "./utils/constants";
+import {Dead} from "./components/dead"
+
 
 function reducer(state, action) {
   switch (action.type) {
@@ -34,6 +36,7 @@ function App() {
         <Sleep {...actionProps} />
         <Coding {...actionProps} />
         <Coffee {...actionProps} />
+        <Dead {...actionProps}/>
         </div>
         <div className="image">
           <img src={imagePath} />
