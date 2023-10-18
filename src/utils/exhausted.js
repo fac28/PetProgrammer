@@ -1,5 +1,3 @@
-export default function isExausted(props) {
-  props.setAlive(false);
-  props.setDeathCause("exhaustion");
-  return;
+export default function isExhausted(dispatch) {
+  dispatch({ type: "update", payload: { alive: false, deathCause: "exhaustion" } });
 }

@@ -1,6 +1,6 @@
-import isOld from "./deathCheck.js";
+import isOld from "./deathCheck";
 
-export default function timePasses(props) {
-  isOld(props);
-  return +props.age + 1;
+export default function timePasses(dispatch, state) {
+  isOld(dispatch, state);
+  dispatch({ type: "update", payload: { age: state.age + 1 } });
 }

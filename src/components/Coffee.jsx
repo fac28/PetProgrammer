@@ -1,20 +1,28 @@
 import aged from "../utils/aged.js";
 import isMad from "../utils/coffeeDeath.js";
 
-export default function Coffee(props) {
+export default function Coffee({ state, dispatch }) {
   function update() {
-    isMad(props);
-    props.setEnergy(props.energy + 1);
-    props.setCoffee(props.coffee + 1);
-    props.setRounds(props.rounds + 1);
-    props.energy - 1 < 0 && props.setAlive(false);
-
-    if (props.rounds === 4) {
-      aged(props);
+    if (!state.alive) {
+      return;
     }
 
-    props.alive && props.setImage("coffee");
+    isMad(dispatch, state);
+    dispatch({ type: "update", payload: { energy: state.energy + 1 } });
+    dispatch({ type: "update", payload: { coffee: state.coffee + 1 } });
+    dispatch({ type: "update", payload: { rounds: state.rounds + 1 } });
+    if (state.energy - 1 < 0) {
+      dispatch({ type: "update", payload: { alive: false } });
+    }
+
+    if (state.rounds === 4) {
+      aged(dispatch, state);
+    }
+
+    if (state.alive) {
+      dispatch({ type: "update", payload: { image: "coffee" } });
+    }
   }
 
-  return <button onClick={props.alive && update}>Coffee</button>;
+  return <button onClick={update}>Coffee</button>;
 }

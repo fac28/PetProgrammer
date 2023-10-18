@@ -1,11 +1,23 @@
-export default function Sleep(props) {
+import timePasses from "../utils/timePasses";
+
+export default function Sleep({ state, dispatch }) {
   function update() {
-    props.setEnergy((energy) => energy + 31);
-    props.setAge(props.timePasses(props));
-    props.setRounds(0);
-    props.setCoffee(0);
-    props.setImage("sleep");
+    if (!state.alive) {
+      // Don't allow sleep if not alive
+      return;
+    }
+
+    // Dispatch actions to update the state
+    dispatch({ type: "update", payload: { energy: state.energy + 31 } });
+    dispatch({ type: "update", payload: { age: timePasses(state) } });
+    dispatch({ type: "update", payload: { rounds: 0 } });
+    dispatch({ type: "update", payload: { coffee: 0 } });
+    dispatch({ type: "update", payload: { image: "sleep" } });
   }
 
-  return <button onClick={() => props.alive && update()}>Sleep</button>;
+  return (
+    <button onClick={update} disabled={!state.alive}>
+      Sleep
+    </button>
+  );
 }
