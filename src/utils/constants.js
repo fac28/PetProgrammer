@@ -4,7 +4,7 @@ export const imagePaths = {
     coding:
       "https://tse2.mm.bing.net/th/id/OIP.2SEbYMe4RrMhSEmOikmfRQHaJ4?w=130&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
     sleep:
-      "https://toppng.com/uploads/preview/snoopy-sleeping-png-new-hot-snoopy-doghouse-round-pink-plastic-11563371983xglpk4sbr3.png",
+      "https://i.pinimg.com/736x/16/20/ee/1620ee900a6adc4a482cf250ac8bee87--snoopy-peanuts.jpg",
     death:
       "https://tse2.mm.bing.net/th/id/OIP.g5L0x4dJMsx2g7xWuAiWaAHaHa?w=205&h=205&c=7&r=0&o=5&dpr=1.3&pid=1.7",
   };
@@ -19,4 +19,5 @@ export const initialState = {
   coffee: 0,
   deathCause: "",
   image: "",
+  unlockedSkills: ["breathing"]
 };

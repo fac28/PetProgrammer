@@ -1,18 +1,27 @@
-export default function Stats(state) {
+export default function Stats(props) {
+  const RenderedSkills = (props) => {
+    // eslint-disable-next-line react/jsx-key
+    return props.skills.map((skill) => <li>{skill}</li>);
+  };
   return (
     <div className="stats">
       <p>
-        {state.alive
-          ? `energy level is ${state.energy}`
-          : `${state.coderName} is DEAD from`}
+        {props.alive
+          ? `energy level is ${props.energy}`
+          : `${props.coderName} is DEAD from`}
       </p>
       <p>
-        {state.alive
-          ? `coding level is ${state.codingSkill}`
-          : `${state.deathCause}!`}
+        {props.alive
+          ? `coding level is ${props.codingSkill}`
+          : `${props.deathCause}!`}
       </p>
 
-      <p>{state.alive ? `age is ${state.age}` : `aged ${state.age}`}</p>
+      <p>{props.alive ? `age is ${props.age}` : `aged ${props.age}`}</p>
+
+      <p>Skills:</p>
+      <ul>
+        <RenderedSkills skills={props.unlockedSkills} />
+      </ul>
     </div>
   );
 }

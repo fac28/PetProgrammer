@@ -13,6 +13,9 @@ export default function Coding({state, dispatch}) {
       dispatch({ type: "update", payload: { energy: state.energy - 20 } });
       dispatch({ type: "update", payload: { rounds: state.rounds + 1 } });
 
+      state.codingSkill + 1 > 0 &&
+      dispatch({ type: "update", payload: { unlockedSkills: [...state.unlockedSkills, "Javascript"] }});
+
       if (state.energy - 20 < 0) {
         isExhausted(dispatch);
       }
