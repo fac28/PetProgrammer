@@ -18,7 +18,7 @@ git clone https://github.com/fac28/PetProgrammer.git
 Navigate to the project directory and install the required npm modules using the following command:
 
 ```bash
-cd petProgrammer
+cd PetProgrammer
 npm install
 ```
 
