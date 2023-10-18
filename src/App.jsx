@@ -1,11 +1,11 @@
 import { useState } from "react";
 
 import "./App.css";
-import Sleep from "./compontents/Sleep.jsx";
-import Coding from "./compontents/Coding.jsx";
-import Coffee from "./compontents/Coffee.jsx";
-import Stats from "./compontents/Stats";
-import CreateName from "./compontents/CreateName";
+import Sleep from "./components/Sleep.jsx";
+import Coding from "./components/Coding.jsx";
+import Coffee from "./components/Coffee.jsx";
+import Stats from "./components/Stats";
+import CreateName from "./components/CreateName";
 import timePasses from "./utils/timePasses";
 
 function App() {
