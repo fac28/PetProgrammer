@@ -1,3 +1,5 @@
+import isOld from "../utils/deathCheck";
+
 export default function Sleep({ state, dispatch }) {
   function update() {
     if (!state.alive) {
@@ -5,9 +7,11 @@ export default function Sleep({ state, dispatch }) {
       return;
     }
 
+    isOld(dispatch, state)
+
     // Dispatch actions to update the state
     dispatch({ type: "update", payload: {
-      energy: state.energy + 31,
+      energy: state.energy + 11,
       age: state.age + 1,
       rounds: 0,
       coffee: 0,

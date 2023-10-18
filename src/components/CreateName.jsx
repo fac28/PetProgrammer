@@ -5,9 +5,9 @@ export default function CreateName({ dispatch }) {
   }
   return (
     <form onSubmit={updateName}>
-      <p>Add Name</p>
+      <p>Name your programmer</p>
       <input name="petName" aria-label="name input"></input>
-      <button type="submit">Submit</button>
+      <button type="submit">Start</button>
     </form>
   );
 }

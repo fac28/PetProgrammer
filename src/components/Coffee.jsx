@@ -1,5 +1,5 @@
 import passedOut from "../utils/passedOut.js";
-import isMad from "../utils/coffeeDeath.js";
+import isMad from "../utils/sanityCheck.js";
 
 export default function Coffee({ state, dispatch }) {
   function update() {
@@ -8,8 +8,9 @@ export default function Coffee({ state, dispatch }) {
     }
 
     isMad(dispatch, state);
+
     dispatch({ type: "update", payload: {
-      energy: state.energy + 1,
+      energy: state.energy + 2,
       coffee: state.coffee + 1,
       rounds: state.rounds + 1}
     });
@@ -27,5 +28,5 @@ export default function Coffee({ state, dispatch }) {
     }
   }
 
-  return <button onClick={update}>Coffee</button>;
+  return <button onClick={update} disabled={!state.alive}>Coffee</button>;
 }

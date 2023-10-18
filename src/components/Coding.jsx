@@ -22,8 +22,6 @@ export default function Coding({ state, dispatch }) {
         rounds: state.rounds + 1
        } });
 
-      
-
     if (state.energy - 20 < 0) {
       isExhausted(dispatch);
     }
@@ -43,5 +41,5 @@ export default function Coding({ state, dispatch }) {
     unlockSkills("Typescript", 25);
   }
 
-  return <button onClick={UpdateStats}>Code</button>;
+  return <button onClick={UpdateStats} disabled={!state.alive}>Code</button>;
 }

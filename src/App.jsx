@@ -7,8 +7,9 @@ import Coffee from "./components/Coffee.jsx";
 import Stats from "./components/Stats";
 import CreateName from "./components/CreateName";
 import {imagePaths, initialState} from "./utils/constants";
-import {Dead} from "./components/dead"
+import {Dead} from "./components/Dead";
 import Apply from "./components/Apply";
+import Progress from "./components/Progress";
 
 
 function reducer(state, action) {
@@ -34,12 +35,15 @@ function App() {
     return (
       <>
         <div className="card buttons">
-        <Sleep {...actionProps} />
-        <Coding {...actionProps} />
-        <Coffee {...actionProps} />
-        <Apply {...actionProps} />
-        <Dead {...actionProps}/>
+          <Sleep {...actionProps} />
+          <Coding {...actionProps} />
+          <Coffee {...actionProps} />
+          <Apply {...actionProps} />
         </div>
+        <div className="progress">
+          <Progress {...actionProps} />
+        </div>
+        <Dead {...actionProps}/>
         <div className="image">
           <img src={imagePath} />
         </div>
