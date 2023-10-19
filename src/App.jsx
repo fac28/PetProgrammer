@@ -1,7 +1,7 @@
 import { useReducer } from "react";
 import { initialState } from "./utils/constants";
 
-import "./App.css";
+import "./app.css";
 
 import Stats from "./components/Stats";
 import CreateName from "./components/CreateName";
