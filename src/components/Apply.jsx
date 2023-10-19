@@ -1,4 +1,4 @@
-export default function Apply({ state, dispatch }) {
+export default function Apply({ state }) {
 
   //check level and then say they need the skill unlocked next
   const skills = ["HTML", "JavaScript", "CSS", "Node", "React", "Typescript"];

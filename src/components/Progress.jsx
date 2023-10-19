@@ -1,4 +1,4 @@
-export default function Progress({dispatch, state}){
+export default function Progress({state}){
 
   const energy_percent = Math.min(Math.max(state.energy, 0), 100);
   const filledEnergy = Math.floor((energy_percent / 100) * 20);
