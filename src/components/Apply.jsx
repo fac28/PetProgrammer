@@ -18,10 +18,8 @@ export default function Apply({ state }) {
 
   }
   return (
-    <>
       <button onClick={update} disabled={!state.alive}>
         Apply for Job
       </button>
-    </>
   );
 }

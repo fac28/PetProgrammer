@@ -1,5 +1,4 @@
 import passedOut from "../utils/passedOut.js";
-import isMad from "../utils/sanityCheck.js";
 
 export default function Coffee({ state, dispatch }) {
   function update() {
@@ -7,7 +6,10 @@ export default function Coffee({ state, dispatch }) {
       return;
     }
 
-    isMad(dispatch, state);
+    if (state.coffee > 9) {
+      dispatch({ type: "update", payload: {
+        alive: false, deathCause: "too much coffee" } });
+    }
 
     dispatch({ type: "update", payload: {
       energy: state.energy + 2,

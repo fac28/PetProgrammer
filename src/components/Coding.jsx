@@ -1,5 +1,4 @@
 import passedOut from "../utils/passedOut.js";
-import isExhausted from "../utils/exhausted.js";
 
 export default function Coding({ state, dispatch }) {
   function unlockSkills(skill, level) {
@@ -9,7 +8,7 @@ export default function Coding({ state, dispatch }) {
         payload: { unlockedSkills: [...state.unlockedSkills, skill] },
       });
   }
-  function UpdateStats() {
+  function updateStats() {
     if (!state.alive) {
       // Don't allow coding if not alive
       return;
@@ -23,7 +22,7 @@ export default function Coding({ state, dispatch }) {
        } });
 
     if (state.energy - 20 < 0) {
-      isExhausted(dispatch);
+      dispatch({ type: "update", payload: { alive: false, deathCause: "exhaustion" } });
     }
 
       if (state.rounds === 4) {
@@ -41,5 +40,5 @@ export default function Coding({ state, dispatch }) {
     unlockSkills("Typescript", 25);
   }
 
-  return <button onClick={UpdateStats} disabled={!state.alive}>Code</button>;
+  return <button onClick={updateStats} disabled={!state.alive}>Code</button>;
 }
