@@ -1,15 +1,11 @@
 import { useReducer } from "react";
+import { initialState } from "./utils/constants";
 
 import "./App.css";
-import Sleep from "./components/Sleep.jsx";
-import Coding from "./components/Coding.jsx";
-import Coffee from "./components/Coffee.jsx";
+
 import Stats from "./components/Stats";
 import CreateName from "./components/CreateName";
-import {imagePaths, initialState} from "./utils/constants";
-import Dead from "./components/Dead";
-import Apply from "./components/Apply";
-import Progress from "./components/Progress";
+import DisplayActions from "./components/DisplayActions";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -28,34 +24,14 @@ function App() {
     dispatch,
   };
 
-  function displayActions() {
-    let imagePath = imagePaths[state.image];
-
-    return (
-      <>
-        <div className="card buttons">
-          <Sleep {...actionProps} />
-          <Coding {...actionProps} />
-          <Coffee {...actionProps} />
-          <Apply {...actionProps} />
-        </div>
-        <div className="progress">
-          <Progress {...actionProps} />
-        </div>
-        <Dead {...actionProps}/>
-        <div className="image">
-          <img src={imagePath} />
-        </div>
-      </>
-    );
-  }
-
   return (
     <>
       <div></div>
       <h1>Pet Programmer</h1>
-      {state && state.coderName != "" && displayActions()}
-      {state && state.coderName != "" ? (
+      {state && state.coderName !== "" && (
+        <DisplayActions state={state} actionProps={actionProps} />
+      )}
+      {state && state.coderName !== "" ? (
         <Stats
           {...state}
         />
